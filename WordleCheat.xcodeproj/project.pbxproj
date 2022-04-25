@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		322CA69528174F0300F9EEE6 /* wordleWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 322CA69428174F0300F9EEE6 /* wordleWords.txt */; };
 		32DB42CA2817230400D616C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB42C92817230400D616C4 /* AppDelegate.swift */; };
 		32DB42CC2817230400D616C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB42CB2817230400D616C4 /* SceneDelegate.swift */; };
 		32DB42CE2817230400D616C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB42CD2817230400D616C4 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		322CA69428174F0300F9EEE6 /* wordleWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wordleWords.txt; path = ../../../../../../../../Downloads/wordleWords.txt; sourceTree = "<group>"; };
 		32DB42C62817230400D616C4 /* WordleCheat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordleCheat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DB42C92817230400D616C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32DB42CB2817230400D616C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		32DB42C82817230400D616C4 /* WordleCheat */ = {
 			isa = PBXGroup;
 			children = (
+				322CA69428174F0300F9EEE6 /* wordleWords.txt */,
 				32DB42C92817230400D616C4 /* AppDelegate.swift */,
 				32DB42CB2817230400D616C4 /* SceneDelegate.swift */,
 				32DB42CD2817230400D616C4 /* ViewController.swift */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DB42D62817230600D616C4 /* LaunchScreen.storyboard in Resources */,
+				322CA69528174F0300F9EEE6 /* wordleWords.txt in Resources */,
 				32DB42D32817230600D616C4 /* Assets.xcassets in Resources */,
 				32DB42D12817230400D616C4 /* Main.storyboard in Resources */,
 			);
