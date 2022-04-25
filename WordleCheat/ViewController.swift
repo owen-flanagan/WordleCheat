@@ -9,6 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let remainingWords = remainingWord()
+    
+    @IBOutlet weak var wordToGuess: UILabel!
+    @IBOutlet weak var wordsRemainingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +23,16 @@ class ViewController: UIViewController {
         print ("wordList count = \(wordList.count)")
         print(wordList)
         
-        let remainingWords = remainingWord()
         remainingWords.setWordList(words: wordList)
         
-        
+        updateUI()
         
     }
     
+    func updateUI(){
+        wordsRemainingLabel.text = String(remainingWords.numWords())
+        wordToGuess.text = remainingWords.bestOption()
+    }
 
 }
 

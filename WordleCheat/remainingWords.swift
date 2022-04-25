@@ -32,8 +32,12 @@ class remainingWord {
         var bestWord = ""
         for word in wordList{
             var tempValue = 0
+            var tempArray: [Character] = []
             for letter in word{
-                tempValue += letterFrequencies[String(letter)]!
+                if !(tempArray.contains(letter)) {
+                    tempValue += letterFrequencies[(String(letter)).uppercased()]!
+                }
+                tempArray.append(letter)
             }
             if tempValue > value{
                 bestWord = word

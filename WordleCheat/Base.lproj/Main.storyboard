@@ -16,15 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF9-5X-xef">
-                                <rect key="frame" x="125" y="310" width="70" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="X4D-6Q-nc7"/>
-                                    <constraint firstAttribute="height" constant="31" id="l8T-nh-v4G"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wordle Cheat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrn-Yn-cza">
+                                <rect key="frame" x="65" y="47" width="190" height="32"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mia-mi-anD">
                                 <rect key="frame" x="207" y="118" width="97" height="34"/>
                                 <constraints>
@@ -96,19 +93,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wordle Cheat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrn-Yn-cza">
-                                <rect key="frame" x="65" y="47" width="190" height="32"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OF9-5X-xef">
+                                <rect key="frame" x="118" y="310" width="84" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="84" id="X4D-6Q-nc7"/>
+                                    <constraint firstAttribute="height" constant="31" id="l8T-nh-v4G"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IZe-b9-czt" secondAttribute="trailing" constant="16" id="0Bz-WJ-v3F"/>
                             <constraint firstItem="us6-KI-zCf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1oo-Zd-Ztb"/>
-                            <constraint firstItem="OF9-5X-xef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="29D-Up-PQF"/>
+                            <constraint firstItem="OF9-5X-xef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="29D-Up-PQF"/>
                             <constraint firstItem="us6-KI-zCf" firstAttribute="top" secondItem="l1o-tg-P9Z" secondAttribute="bottom" constant="78" id="60b-dD-sLM"/>
                             <constraint firstItem="l1o-tg-P9Z" firstAttribute="top" secondItem="7FM-Oc-Y5L" secondAttribute="bottom" constant="9" id="9aL-h8-I9m"/>
                             <constraint firstItem="l1o-tg-P9Z" firstAttribute="top" secondItem="7FM-Oc-Y5L" secondAttribute="bottom" constant="9" id="BLb-Cf-cB1"/>
@@ -133,9 +133,13 @@
                             <constraint firstItem="Xrn-Yn-cza" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="noc-3e-HMT"/>
                             <constraint firstItem="OF9-5X-xef" firstAttribute="top" secondItem="l1o-tg-P9Z" secondAttribute="bottom" constant="8" symbolic="YES" id="pPZ-bW-5EQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mJy-8v-7y4" secondAttribute="trailing" constant="16" id="saO-lG-S6c"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OF9-5X-xef" secondAttribute="trailing" constant="125" id="znh-ll-1Sd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OF9-5X-xef" secondAttribute="trailing" constant="118" id="znh-ll-1Sd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wordToGuess" destination="IZe-b9-czt" id="GZy-aF-kg6"/>
+                        <outlet property="wordsRemainingLabel" destination="DiI-uu-Il5" id="tB1-HC-VnV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
