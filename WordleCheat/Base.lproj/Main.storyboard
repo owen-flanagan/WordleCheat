@@ -101,7 +101,25 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAJ-Gu-eST"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZm-2V-lE3">
+                                <rect key="frame" x="130" y="349" width="61" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Prx-7R-G9e"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR: Input correct values for Guess and Result" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yO7-QS-Oeg">
+                                <rect key="frame" x="199" y="286" width="105" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -116,11 +134,13 @@
                             <constraint firstItem="7FM-Oc-Y5L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JAP-za-NAH"/>
                             <constraint firstItem="mia-mi-anD" firstAttribute="top" secondItem="Xrn-Yn-cza" secondAttribute="bottom" constant="39" id="JeJ-fC-ZMT"/>
                             <constraint firstItem="DiI-uu-Il5" firstAttribute="top" secondItem="IZe-b9-czt" secondAttribute="bottom" constant="53" id="Jf8-fX-2Do"/>
+                            <constraint firstItem="WZm-2V-lE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="L3v-TN-V2a"/>
                             <constraint firstItem="7FM-Oc-Y5L" firstAttribute="top" secondItem="vA1-OK-cYa" secondAttribute="bottom" constant="31" id="Mdb-fn-sxL"/>
                             <constraint firstItem="vA1-OK-cYa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NMc-SZ-2OO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DiI-uu-Il5" secondAttribute="trailing" constant="16" id="SoE-vm-fJb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xrn-Yn-cza" secondAttribute="trailing" constant="65" id="Td0-32-FIs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mia-mi-anD" secondAttribute="trailing" constant="16" id="Thu-R1-BO3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WZm-2V-lE3" secondAttribute="trailing" constant="129" id="VCX-XJ-oRC"/>
                             <constraint firstItem="mJy-8v-7y4" firstAttribute="top" secondItem="mia-mi-anD" secondAttribute="bottom" constant="30" id="X9K-2R-gL9"/>
                             <constraint firstItem="mia-mi-anD" firstAttribute="top" secondItem="Xrn-Yn-cza" secondAttribute="bottom" constant="39" id="XwS-yf-dFk"/>
                             <constraint firstItem="vA1-OK-cYa" firstAttribute="top" secondItem="Xrn-Yn-cza" secondAttribute="bottom" constant="41" id="YGE-MY-Qpc"/>
@@ -128,6 +148,7 @@
                             <constraint firstItem="5o2-vk-gXd" firstAttribute="top" secondItem="us6-KI-zCf" secondAttribute="bottom" constant="53" id="gIY-8M-EE9"/>
                             <constraint firstItem="l1o-tg-P9Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hiO-MX-XRs"/>
                             <constraint firstItem="Xrn-Yn-cza" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="iBh-Nh-Vkd"/>
+                            <constraint firstItem="WZm-2V-lE3" firstAttribute="top" secondItem="OF9-5X-xef" secondAttribute="bottom" constant="8" symbolic="YES" id="k8v-7O-618"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mia-mi-anD" secondAttribute="trailing" constant="16" id="kcC-0M-Vf4"/>
                             <constraint firstItem="IZe-b9-czt" firstAttribute="top" secondItem="mJy-8v-7y4" secondAttribute="bottom" constant="164" id="lTu-gX-Dpn"/>
                             <constraint firstItem="Xrn-Yn-cza" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="noc-3e-HMT"/>
@@ -137,6 +158,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="yO7-QS-Oeg" id="g3P-Bh-3FW"/>
+                        <outlet property="guessResultTextField" destination="mJy-8v-7y4" id="LZI-H5-fe6"/>
+                        <outlet property="guessTextField" destination="mia-mi-anD" id="dqV-X0-J02"/>
                         <outlet property="wordToGuess" destination="IZe-b9-czt" id="GZy-aF-kg6"/>
                         <outlet property="wordsRemainingLabel" destination="DiI-uu-Il5" id="tB1-HC-VnV"/>
                     </connections>
@@ -149,6 +173,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

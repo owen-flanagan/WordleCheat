@@ -13,27 +13,58 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var wordToGuess: UILabel!
     @IBOutlet weak var wordsRemainingLabel: UILabel!
+    @IBOutlet weak var guessTextField: UITextField!
+    @IBOutlet weak var guessResultTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var wordList = [String]()
-        let path = Bundle.main.path(forResource: "wordleWords.txt", ofType: nil)!
-        let s = try! String(contentsOfFile: path, encoding: String.Encoding.utf8)
-        wordList = s.components(separatedBy: "\n")
-        print ("wordList count = \(wordList.count)")
-        print(wordList)
         
-        remainingWords.setWordList(words: wordList)
+        remainingWords.resetWordList()
         
         updateUI()
+        wordToGuess.text = "crane"
+        errorLabel.alpha = 0
         
     }
     
     func updateUI(){
         wordsRemainingLabel.text = String(remainingWords.numWords())
         wordToGuess.text = remainingWords.bestOption()
+        guessTextField.text = ""
+        guessResultTextField.text = ""
+        
     }
 
+    @IBAction func submitButtonPressed(_ sender: Any) {
+        errorLabel.alpha = 0
+        let guess = guessTextField.text
+        let guessResult = guessResultTextField.text
+        if (!(guess!.count == 5) || !(guessResult!.count == 5)){
+            errorLabel.alpha = 1
+            
+        }
+        for i in 0...4{
+            if guessResult![i].uppercased() == "G"{
+                remainingWords.eliminateOptionsGreen(letter: guess![i].lowercased(), position: i)
+            }
+            if guessResult![i].uppercased() == "Y"{
+                remainingWords.eliminateOptionsYellow(letter: guess![i].lowercased())
+            }
+        }
+        guessTextField.text = ""
+        guessResultTextField.text = ""
+    }
+    
+    @IBAction func resetButtonPressed(_ sender: Any) {
+        errorLabel.alpha = 0
+        remainingWords.resetWordList()
+        updateUI()
+        wordToGuess.text = "crane"
+        
+    }
+    
+    
 }
 
 public extension String {

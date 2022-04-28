@@ -9,6 +9,15 @@ import Foundation
 
 class remainingWord {
    
+    init(){
+        let path = Bundle.main.path(forResource: "wordleWords.txt", ofType: nil)!
+        let s = try! String(contentsOfFile: path, encoding: String.Encoding.utf8)
+        initialWords = s.components(separatedBy: "\n")
+        print ("wordList count = \(initialWords.count)")
+        print(initialWords)
+    }
+    
+    var initialWords: [String]
     
     var wordList: [String] = []
     
@@ -53,5 +62,9 @@ class remainingWord {
     
     func numWords() -> Int{
         return wordList.count
+    }
+    
+    func resetWordList(){
+        wordList = initialWords
     }
 }
