@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var guessTextField: UITextField!
     @IBOutlet weak var guessResultTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var solvedLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class ViewController: UIViewController {
         updateUI()
         wordToGuess.text = "crane"
         errorLabel.alpha = 0
+        solvedLabel.alpha = 0
         
     }
     
@@ -33,6 +35,9 @@ class ViewController: UIViewController {
         wordToGuess.text = remainingWords.bestOption()
         guessTextField.text = ""
         guessResultTextField.text = ""
+        if remainingWords.numWords() == 1{
+            solvedLabel.alpha = 1
+        }
         
     }
 
@@ -42,22 +47,26 @@ class ViewController: UIViewController {
         let guessResult = guessResultTextField.text
         if (!(guess!.count == 5) || !(guessResult!.count == 5)){
             errorLabel.alpha = 1
-            
         }
         for i in 0...4{
             if guessResult![i].uppercased() == "G"{
                 remainingWords.eliminateOptionsGreen(letter: guess![i].lowercased(), position: i)
             }
             if guessResult![i].uppercased() == "Y"{
-                remainingWords.eliminateOptionsYellow(letter: guess![i].lowercased())
+                remainingWords.eliminateOptionsYellow(letter: guess![i].lowercased(), position: i)
+            }
+            if guessResult![i].uppercased() == "R"{
+                remainingWords.eliminateOptionsGrey(letter: guess![i].lowercased())
             }
         }
         guessTextField.text = ""
         guessResultTextField.text = ""
+        updateUI()
     }
     
     @IBAction func resetButtonPressed(_ sender: Any) {
         errorLabel.alpha = 0
+        solvedLabel.alpha = 0
         remainingWords.resetWordList()
         updateUI()
         wordToGuess.text = "crane"

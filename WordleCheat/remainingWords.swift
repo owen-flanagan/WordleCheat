@@ -30,9 +30,15 @@ class remainingWord {
         wordList = temp
     }
     
-    func eliminateOptionsYellow(letter: String){
+    func eliminateOptionsYellow(letter: String, position: Int){
         var temp: [String]
         temp = wordList.filter{$0.contains(letter)}
+        wordList = temp.filter{!(String($0[position]) == letter)}
+    }
+    
+    func eliminateOptionsGrey(letter: String){
+        var temp: [String]
+        temp = wordList.filter{!$0.contains(letter)}
         wordList = temp
     }
     
