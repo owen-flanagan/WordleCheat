@@ -191,7 +191,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Show Remaining Words"/>
                                 <connections>
                                     <action selector="detailButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NxB-9T-H7g"/>
-                                    <segue destination="GIR-xp-NiD" kind="showDetail" identifier="ShowDetail" id="MRF-VW-k7f"/>
+                                    <segue destination="GIR-xp-NiD" kind="show" identifier="ShowDetail" id="MRF-VW-k7f"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -282,7 +282,9 @@
                             <constraint firstItem="VGk-QY-izm" firstAttribute="top" secondItem="qRF-Pi-uyv" secondAttribute="top" id="fI6-qg-IVY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" leftItemsSupplementBackButton="YES" id="jx5-dZ-a2T"/>
+                    <navigationItem key="navigationItem" title="Title" leftItemsSupplementBackButton="YES" id="jx5-dZ-a2T">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="62E-Ol-6li"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="VGk-QY-izm" id="DwS-fv-nmW"/>
                     </connections>
