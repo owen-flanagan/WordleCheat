@@ -108,6 +108,16 @@ class ViewController: UIViewController {
     @IBAction func guessResultChanged(_ sender: UITextField) {
         submitEnableCheck()
     }
+    
+    @IBAction func detailButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "ShowDetail", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! DetailViewController
+        destination.wordList = remainingWords.wordList
+    }
+    
 
 }
 

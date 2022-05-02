@@ -16,6 +16,7 @@
 		32DB42D12817230400D616C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DB42CF2817230400D616C4 /* Main.storyboard */; };
 		32DB42D32817230600D616C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DB42D22817230600D616C4 /* Assets.xcassets */; };
 		32DB42D62817230600D616C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DB42D42817230600D616C4 /* LaunchScreen.storyboard */; };
+		32EBB50D28208B5E001EF714 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBB50C28208B5E001EF714 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		32DB42D22817230600D616C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DB42D52817230600D616C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DB42D72817230600D616C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32EBB50C28208B5E001EF714 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				32DB42D42817230600D616C4 /* LaunchScreen.storyboard */,
 				32DB42D72817230600D616C4 /* Info.plist */,
 				322CA69628174F9B00F9EEE6 /* remainingWords.swift */,
+				32EBB50C28208B5E001EF714 /* DetailViewController.swift */,
 			);
 			path = WordleCheat;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				328013EB282066D8009DF66D /* Splash Screen View Controller.swift in Sources */,
 				322CA69728174F9B00F9EEE6 /* remainingWords.swift in Sources */,
 				32DB42CE2817230400D616C4 /* ViewController.swift in Sources */,
+				32EBB50D28208B5E001EF714 /* DetailViewController.swift in Sources */,
 				32DB42CA2817230400D616C4 /* AppDelegate.swift in Sources */,
 				32DB42CC2817230400D616C4 /* SceneDelegate.swift in Sources */,
 			);
