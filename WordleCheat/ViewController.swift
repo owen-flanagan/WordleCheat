@@ -11,15 +11,21 @@ class ViewController: UIViewController {
     
     let remainingWords = remainingWord()
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var wordToGuess: UILabel!
     @IBOutlet weak var wordsRemainingLabel: UILabel!
     @IBOutlet weak var guessTextField: UITextField!
     @IBOutlet weak var guessResultTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var solvedLabel: UILabel!
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.addShadow(offset: CGSize(width: 1, height: 1), color: UIColor.black, radius: CGFloat(6.0), opacity: 1.0)
+        
+        submitButton.isEnabled = false
         
         remainingWords.resetWordList()
         
@@ -38,7 +44,28 @@ class ViewController: UIViewController {
         if remainingWords.numWords() == 1{
             solvedLabel.alpha = 1
         }
+        submitEnableCheck()
+        if remainingWords.numWords() == remainingWords.initialWords.count {
+            wordToGuess.text = "crane"
+        }
         
+    }
+    
+    func submitEnableCheck(){
+        if guessTextField.text == nil || guessResultTextField.text == nil{
+            submitButton.isEnabled = false
+            return
+        }
+        
+        if guessTextField.text!.isEmpty || guessResultTextField.text!.isEmpty {
+            submitButton.isEnabled = false
+        }
+        else if guessTextField.text!.count == 5 && guessResultTextField.text!.count == 5{
+            submitButton.isEnabled = true
+        }
+        else {
+            submitButton.isEnabled = false
+        }
     }
 
     @IBAction func submitButtonPressed(_ sender: Any) {
@@ -47,6 +74,7 @@ class ViewController: UIViewController {
         let guessResult = guessResultTextField.text
         if (!(guess!.count == 5) || !(guessResult!.count == 5)){
             errorLabel.alpha = 1
+            return
         }
         for i in 0...4{
             if guessResult![i].uppercased() == "G"{
@@ -73,7 +101,14 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func guessTextChanged(_ sender: UITextField) {
+        submitEnableCheck()
+    }
     
+    @IBAction func guessResultChanged(_ sender: UITextField) {
+        submitEnableCheck()
+    }
+
 }
 
 public extension String {
@@ -114,4 +149,18 @@ private extension String {
   func index(at offset: Int) -> String.Index {
     index(startIndex, offsetBy: offset)
   }
+}
+
+extension UILabel {
+    func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
+           layer.masksToBounds = false
+           layer.shadowOffset = offset
+           layer.shadowColor = color.cgColor
+           layer.shadowRadius = radius
+           layer.shadowOpacity = opacity
+
+           let backgroundCGColor = backgroundColor?.cgColor
+           backgroundColor = nil
+           layer.backgroundColor =  backgroundCGColor
+       }
 }

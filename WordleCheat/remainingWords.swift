@@ -13,6 +13,8 @@ class remainingWord {
         let path = Bundle.main.path(forResource: "wordleWords.txt", ofType: nil)!
         let s = try! String(contentsOfFile: path, encoding: String.Encoding.utf8)
         initialWords = s.components(separatedBy: "\n")
+        let temp = initialWords.filter{String($0).isEmpty == false}
+        initialWords = temp
         print ("wordList count = \(initialWords.count)")
         print(initialWords)
     }

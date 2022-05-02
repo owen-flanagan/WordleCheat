@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pRf-VO-rj7">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,12 +8,59 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="gs1-Kj-AtD">
+            <objects>
+                <viewController id="pRf-VO-rj7" customClass="SplashScreenViewController" customModule="WordleCheat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LOp-wM-dQY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01O9cD990ECgKwgagoHBoTW-2" translatesAutoresizingMaskIntoConstraints="NO" id="INX-5B-iv7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kl9-cn-ZNw" appends="YES" id="6yP-uD-Gaj"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db1-8P-XCG">
+                                <rect key="frame" x="87" y="520" width="146" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bi2-rl-xW0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bi2-rl-xW0" firstAttribute="bottom" secondItem="INX-5B-iv7" secondAttribute="bottom" id="6Cz-kV-DoD"/>
+                            <constraint firstItem="INX-5B-iv7" firstAttribute="leading" secondItem="bi2-rl-xW0" secondAttribute="leading" id="AfR-4o-dYM"/>
+                            <constraint firstItem="Db1-8P-XCG" firstAttribute="centerX" secondItem="LOp-wM-dQY" secondAttribute="centerX" id="HaL-XS-0Se"/>
+                            <constraint firstAttribute="trailing" secondItem="INX-5B-iv7" secondAttribute="trailing" id="b0V-fU-Xdp"/>
+                            <constraint firstItem="bi2-rl-xW0" firstAttribute="bottom" secondItem="Db1-8P-XCG" secondAttribute="bottom" constant="20" id="j7W-Hg-PJL"/>
+                            <constraint firstItem="INX-5B-iv7" firstAttribute="top" secondItem="bi2-rl-xW0" secondAttribute="top" id="zzM-GV-Ksc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="INX-5B-iv7" id="EHF-Ms-Qhc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZpR-Sx-gWo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kl9-cn-ZNw">
+                    <connections>
+                        <action selector="imageTapped:" destination="pRf-VO-rj7" id="b3O-7S-D3t"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="Main" id="wht-cU-9Uh"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1350" y="96.126760563380287"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WordleCheat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wordle Cheat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrn-Yn-cza">
@@ -29,6 +76,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="guessTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YDC-3h-Cmi"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mJy-8v-7y4">
                                 <rect key="frame" x="207" y="182" width="97" height="34"/>
@@ -37,6 +87,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="guessResultChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Ope-hC-OnD"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Input Guess Results: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FM-Oc-Y5L">
                                 <rect key="frame" x="16" y="183" width="158" height="32"/>
@@ -106,7 +159,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZm-2V-lE3">
-                                <rect key="frame" x="130" y="349" width="61" height="31"/>
+                                <rect key="frame" x="112.5" y="349" width="95" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="khr-6U-z3x"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reset"/>
                                 <connections>
@@ -120,6 +176,12 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations! You solved it!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-vg-qTm">
+                                <rect key="frame" x="26.5" y="502" width="267" height="26"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -127,6 +189,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IZe-b9-czt" secondAttribute="trailing" constant="16" id="0Bz-WJ-v3F"/>
                             <constraint firstItem="us6-KI-zCf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1oo-Zd-Ztb"/>
                             <constraint firstItem="OF9-5X-xef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="29D-Up-PQF"/>
+                            <constraint firstItem="WZm-2V-lE3" firstAttribute="top" secondItem="OF9-5X-xef" secondAttribute="bottom" constant="8" symbolic="YES" id="4Sh-ak-z7P"/>
                             <constraint firstItem="us6-KI-zCf" firstAttribute="top" secondItem="l1o-tg-P9Z" secondAttribute="bottom" constant="78" id="60b-dD-sLM"/>
                             <constraint firstItem="l1o-tg-P9Z" firstAttribute="top" secondItem="7FM-Oc-Y5L" secondAttribute="bottom" constant="9" id="9aL-h8-I9m"/>
                             <constraint firstItem="l1o-tg-P9Z" firstAttribute="top" secondItem="7FM-Oc-Y5L" secondAttribute="bottom" constant="9" id="BLb-Cf-cB1"/>
@@ -134,13 +197,13 @@
                             <constraint firstItem="7FM-Oc-Y5L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JAP-za-NAH"/>
                             <constraint firstItem="mia-mi-anD" firstAttribute="top" secondItem="Xrn-Yn-cza" secondAttribute="bottom" constant="39" id="JeJ-fC-ZMT"/>
                             <constraint firstItem="DiI-uu-Il5" firstAttribute="top" secondItem="IZe-b9-czt" secondAttribute="bottom" constant="53" id="Jf8-fX-2Do"/>
-                            <constraint firstItem="WZm-2V-lE3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="L3v-TN-V2a"/>
+                            <constraint firstItem="mmh-vg-qTm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LGU-YJ-B7y"/>
                             <constraint firstItem="7FM-Oc-Y5L" firstAttribute="top" secondItem="vA1-OK-cYa" secondAttribute="bottom" constant="31" id="Mdb-fn-sxL"/>
                             <constraint firstItem="vA1-OK-cYa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NMc-SZ-2OO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DiI-uu-Il5" secondAttribute="trailing" constant="16" id="SoE-vm-fJb"/>
+                            <constraint firstItem="mmh-vg-qTm" firstAttribute="top" secondItem="5o2-vk-gXd" secondAttribute="bottom" constant="5" id="THX-Ig-6sa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xrn-Yn-cza" secondAttribute="trailing" constant="65" id="Td0-32-FIs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mia-mi-anD" secondAttribute="trailing" constant="16" id="Thu-R1-BO3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WZm-2V-lE3" secondAttribute="trailing" constant="129" id="VCX-XJ-oRC"/>
                             <constraint firstItem="mJy-8v-7y4" firstAttribute="top" secondItem="mia-mi-anD" secondAttribute="bottom" constant="30" id="X9K-2R-gL9"/>
                             <constraint firstItem="mia-mi-anD" firstAttribute="top" secondItem="Xrn-Yn-cza" secondAttribute="bottom" constant="39" id="XwS-yf-dFk"/>
                             <constraint firstItem="vA1-OK-cYa" firstAttribute="top" secondItem="Xrn-Yn-cza" secondAttribute="bottom" constant="41" id="YGE-MY-Qpc"/>
@@ -148,31 +211,39 @@
                             <constraint firstItem="5o2-vk-gXd" firstAttribute="top" secondItem="us6-KI-zCf" secondAttribute="bottom" constant="53" id="gIY-8M-EE9"/>
                             <constraint firstItem="l1o-tg-P9Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hiO-MX-XRs"/>
                             <constraint firstItem="Xrn-Yn-cza" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="iBh-Nh-Vkd"/>
-                            <constraint firstItem="WZm-2V-lE3" firstAttribute="top" secondItem="OF9-5X-xef" secondAttribute="bottom" constant="8" symbolic="YES" id="k8v-7O-618"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mia-mi-anD" secondAttribute="trailing" constant="16" id="kcC-0M-Vf4"/>
                             <constraint firstItem="IZe-b9-czt" firstAttribute="top" secondItem="mJy-8v-7y4" secondAttribute="bottom" constant="164" id="lTu-gX-Dpn"/>
+                            <constraint firstItem="WZm-2V-lE3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n68-pF-uys"/>
                             <constraint firstItem="Xrn-Yn-cza" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="noc-3e-HMT"/>
                             <constraint firstItem="OF9-5X-xef" firstAttribute="top" secondItem="l1o-tg-P9Z" secondAttribute="bottom" constant="8" symbolic="YES" id="pPZ-bW-5EQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mJy-8v-7y4" secondAttribute="trailing" constant="16" id="saO-lG-S6c"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OF9-5X-xef" secondAttribute="trailing" constant="118" id="znh-ll-1Sd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Xsc-Yj-lt7"/>
                     <connections>
                         <outlet property="errorLabel" destination="yO7-QS-Oeg" id="g3P-Bh-3FW"/>
                         <outlet property="guessResultTextField" destination="mJy-8v-7y4" id="LZI-H5-fe6"/>
                         <outlet property="guessTextField" destination="mia-mi-anD" id="dqV-X0-J02"/>
+                        <outlet property="solvedLabel" destination="mmh-vg-qTm" id="Fe6-Ed-5Jy"/>
+                        <outlet property="submitButton" destination="OF9-5X-xef" id="X0Z-GP-xDA"/>
+                        <outlet property="titleLabel" destination="Xrn-Yn-cza" id="gNP-bV-5bB"/>
                         <outlet property="wordToGuess" destination="IZe-b9-czt" id="GZy-aF-kg6"/>
                         <outlet property="wordsRemainingLabel" destination="DiI-uu-Il5" id="tB1-HC-VnV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.75" y="97.183098591549296"/>
+            <point key="canvasLocation" x="-414.375" y="95.070422535211264"/>
         </scene>
     </scenes>
     <resources>
+        <image name="01O9cD990ECgKwgagoHBoTW-2" width="1200" height="630"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
