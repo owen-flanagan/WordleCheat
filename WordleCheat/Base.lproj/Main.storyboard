@@ -75,7 +75,7 @@
                                     <constraint firstAttribute="width" constant="97" id="Kq0-GM-g44"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="guessTextChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="YDC-3h-Cmi"/>
                                 </connections>
@@ -86,7 +86,7 @@
                                     <constraint firstAttribute="width" constant="97" id="PIS-yh-0YC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="guessResultChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Ope-hC-OnD"/>
                                 </connections>
